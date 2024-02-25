@@ -1,6 +1,9 @@
-package ua.javarush.ciphercaesar.caesarcipher;
+package ua.javarush.caesar.caesarcipher;
+
+import ua.javarush.caesar.alphabet.Alphabet;
 
 public class CaesarCipher {
+
     private final Alphabet alphabet;
 
     public CaesarCipher(Alphabet alphabet) {
@@ -19,8 +22,9 @@ public class CaesarCipher {
         char[] symbols = new char[chars.length];
 
         for (int i = 0; i < chars.length; i++) {
-            symbols[i] = alphabet.characterEncoding(chars[i], key);
+            symbols[i] = alphabet.symbolEncoding(chars[i], key);
         }
+
         return symbols;
     }
 }

@@ -1,17 +1,21 @@
-package ua.javarush.ciphercaesar.caesarcipher;
+package ua.javarush.caesar.alphabet;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Alphabet {
+
+    public static final List<Character> ALPHABET_ENGLISH = Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+            'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    public static final String LANGUAGE_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
     private final List<Character> symbols;
 
     public Alphabet(List<Character> symbols) {
         this.symbols = Collections.unmodifiableList(symbols);
     }
 
-    public Character characterEncoding(Character original, int shift) {
+    public Character symbolEncoding(Character original, int shift) {
         if (!symbols.contains(Character.toLowerCase(original))) {
             return original;
         }
@@ -19,12 +23,4 @@ public class Alphabet {
 
         return Character.isUpperCase(original) ? Character.toUpperCase(symbols.get(newIndex)) : symbols.get(newIndex);
     }
-
-//    public static void main(String[] args) {
-//        List<Character> symbols = Arrays.asList('p', 'r', 'c', '1', 'i');
-//        Alphabet alphabet = new Alphabet(symbols);
-//
-//        Character result = alphabet.characterEncoding('c', 0);
-//        System.out.println(result);
-//    }
 }

@@ -1,4 +1,4 @@
-package ua.javarush.ciphercaesar;
+package ua.javarush.caesar.service;
 
 public enum EncodingOptions {
     ENCRYPT,
